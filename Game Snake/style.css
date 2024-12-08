@@ -1,0 +1,206 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+}
+
+.btn-speed {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#score {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.iconn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vh;
+    height: 7rem;
+    gap: 5px;
+}
+
+img {
+    height: 7rem;
+    width: 7rem;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fitur {
+    height:13rem;
+    width: 80vh;
+    background-image: url(img/bgAtas.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+h1 {
+    font-family: "IMPACT", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    color: #ff6b6b; /* Warna berubah saat hover */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Styling untuk label */
+label {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+label:hover {
+    color: #ff6b6b; /* Mengubah warna teks saat hover */
+}
+
+/* Styling untuk select */
+select {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    color: #333;
+    width: 100%;
+    max-width: 200px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Gaya saat hover pada select */
+select:hover {
+    border-color: #ff6b6b;
+    background-color: #fff;
+}
+
+/* Gaya saat select diaktifkan (focus) */
+select:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+}
+
+/* Styling untuk option */
+option {
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Gaya saat hover pada option */
+option:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+
+#score {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff6b6b, #f94d6a);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+#score:hover {
+    background: linear-gradient(45deg, #f94d6a, #ff6b6b);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+#score:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b6b, #f94d6a);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #f94d6a, #ff6b6b);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.5);
+}
+
+
+canvas {
+    border-radius:  1rem;
+    -webkit-border-radius:  1rem;
+    -moz-border-radius:  1rem;
+    -ms-border-radius:  1rem;
+    -o-border-radius:  1rem;
+}
+
+#board {
+    width: 80rem;
+    height: 400px;
+    border: 1px solid black;
+}
