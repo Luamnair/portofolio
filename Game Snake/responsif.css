@@ -130,3 +130,93 @@ body {
         padding: 10px;
     }
 }
+
+/* Sembunyikan tombol secara default */
+.game-controls {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.game-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tampilkan tombol jika lebar layar di bawah 640px */
+@media (max-width: 640px) {
+    .game-controls {
+        display: block;
+    }
+}
+
+/* Arrow Button Styling */
+@media screen and (max-width: 640px) {
+    .arrow-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .arrow-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .arrow-btn {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(145deg, #ff7eb3, #ff165d);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .arrow-btn:active {
+        transform: scale(0.9);
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .arrow-btn:hover {
+        background: linear-gradient(145deg, #ff165d, #ff7eb3);
+    }
+
+    .arrow-btn span {
+        display: block;
+        transform: rotate(0deg);
+        font-size: 18px;
+    }
+
+    .arrow-btn[data-direction="up"] span {
+        transform: rotate(-90deg);
+    }
+
+    .arrow-btn[data-direction="down"] span {
+        transform: rotate(90deg);
+    }
+
+    .arrow-btn[data-direction="left"] span {
+        transform: rotate(180deg);
+    }
+}
