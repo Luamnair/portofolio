@@ -8,6 +8,44 @@
     <link href="styles/style.css" rel="stylesheet"/>
     <link href="styles/responsive.css" rel="stylesheet"/>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <style>
+        .filter-buttons {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .filter-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .filter-buttons button:hover {
+            background-color: #ddd;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -51,6 +89,41 @@
         </div>
     </header>
     <!-- Header End -->
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h1 style="text-align: center; margin-top: 30px;">Gallery with Filters</h1>
+        <div class="filter-buttons">
+            <button data-filter="all">All</button>
+            <button data-filter="nature">Nature</button>
+            <button data-filter="architecture">Architecture</button>
+            <button data-filter="animals">Animals</button>
+        </div>
+        <div class="gallery">
+            <!-- Gallery Items -->
+            <div class="gallery-item nature">
+                <img src="https://via.placeholder.com/150?text=Nature+1" alt="Nature">
+            </div>
+            <div class="gallery-item architecture">
+                <img src="https://via.placeholder.com/150?text=Architecture+1" alt="Architecture">
+            </div>
+            <div class="gallery-item animals">
+                <img src="https://via.placeholder.com/150?text=Animals+1" alt="Animals">
+            </div>
+            <div class="gallery-item nature">
+                <img src="https://via.placeholder.com/150?text=Nature+2" alt="Nature">
+            </div>
+            <div class="gallery-item architecture">
+                <img src="https://via.placeholder.com/150?text=Architecture+2" alt="Architecture">
+            </div>
+            <div class="gallery-item animals">
+                <img src="https://via.placeholder.com/150?text=Animals+2" alt="Animals">
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+    
     <!-- button up -->
     <div id="tombolUp">
         <p>UP</p>
@@ -125,20 +198,6 @@
         </div>
     </section>
     <!-- Services End -->
-
-    <!-- Filter -->
-    <section>
-        <div class="main-container">
-            <h3 class="pre-title">Filter</h3>
-            <select id="filterTags">
-                <option value="all">All</option>
-                <option value="HTML">HTML</option>
-                <option value="CSS">CSS</option>
-                <option value="JS">JavaScript</option>
-                <option value="Intermediate">Intermediate</option>
-            </select>
-        </div>
-    </section>
     
     <!-- Portofolio -->
     <section id="portofolios">
@@ -409,5 +468,25 @@
     <!-- Footer End -->
 
     <script src="scripts/main.js"></script>
+
+    <script>
+        const buttons = document.querySelectorAll('.filter-buttons button');
+        const items = document.querySelectorAll('.gallery-item');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                items.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>
